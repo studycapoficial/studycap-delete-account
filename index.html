@@ -7,6 +7,8 @@
   <meta name="theme-color" content="#2e1065">
   <meta name="description" content="O app definitivo para organizar seus estudos, com IA integrada e método Pomodoro.">
   
+  <link rel="icon" href="Mari.png" type="image/png">
+  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -94,8 +96,18 @@
     /* --- HERO SECTION --- */
     .hero {
       text-align: center;
-      padding: 80px 0 40px;
+      padding: 60px 0 40px;
       position: relative;
+    }
+
+    .hero-logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 24px;
+      box-shadow: 0 0 40px rgba(139, 92, 246, 0.3);
+      margin-bottom: 30px;
+      animation: float 6s ease-in-out infinite;
+      object-fit: cover;
     }
 
     h1 {
@@ -143,32 +155,59 @@
       transform: translateY(-2px);
     }
 
-    /* Estilo para botão desabilitado (Em breve) */
     .btn-store.coming-soon {
       opacity: 0.6;
       cursor: not-allowed;
       background: rgba(255,255,255,0.05);
     }
-    .btn-store.coming-soon:hover {
-      background: rgba(255,255,255,0.05);
-      transform: none;
-    }
     
-    /* Configuração dos Ícones das Lojas */
     .store-icon { 
       width: 24px; 
       height: 24px; 
-      object-fit: contain; /* Garante que o ícone não distorça */
+      object-fit: contain;
     }
 
-    /* --- IMAGEM DO MOCKUP --- */
-    .mockup-image {
-      display: block;
-      max-width: 300px;
-      width: 100%;
-      height: auto;
+    /* --- MOCKUP DO CELULAR (Feito em CSS) --- */
+    .phone-mockup {
+      width: 300px;
+      height: 600px; /* Altura padrão para telas modernas */
+      background: #000;
       margin: 0 auto;
-      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+      border-radius: 40px;
+      border: 8px solid #1e293b;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      z-index: 10;
+    }
+
+    .notch {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 25px;
+      background: #1e293b;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+      z-index: 20;
+    }
+
+    .screen-content {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Configuração da Imagem do Print (print.jpg) */
+    .screen-content img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Faz o print preencher todo o celular */
+        display: block;
     }
 
     /* --- FEATURES --- */
@@ -280,6 +319,9 @@
     </nav>
 
     <section class="hero">
+      
+      <img src="Mari.png" alt="StudyCap Logo" class="hero-logo">
+
       <h1>Estude de forma<br>inteligente.</h1>
       <p class="subtitle">Organize suas notas, use Inteligência Artificial e domine o método Pomodoro. Tudo em um só lugar.</p>
       
@@ -297,7 +339,12 @@
 
       </div>
 
-      <img src="mockup.png" alt="StudyCap no Android" class="mockup-image">
+      <div class="phone-mockup">
+        <div class="notch"></div>
+        <div class="screen-content">
+           <img src="print.jpg" alt="Tela do App">
+        </div>
+      </div>
 
     </section>
 
